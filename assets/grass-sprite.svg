@@ -1,0 +1,41 @@
+<svg width="80" height="100" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#32CD32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#228B22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#228B22;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#006400;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground/base -->
+  <rect x="25" y="85" width="30" height="15" rx="2" fill="#8B4513" opacity="0.6"/>
+
+  <!-- Grass blades - left side -->
+  <path d="M30,85 Q25,70 28,55 Q30,50 32,55 Q35,70 30,85 Z" fill="url(#grassGradient)"/>
+  <path d="M35,85 Q30,65 33,45 Q35,40 37,45 Q40,65 35,85 Z" fill="url(#grassGradient)"/>
+  <path d="M40,85 Q35,75 38,60 Q40,55 42,60 Q45,75 40,85 Z" fill="url(#grassGradient)"/>
+
+  <!-- Grass blades - right side -->
+  <path d="M45,85 Q50,70 47,55 Q45,50 43,55 Q40,70 45,85 Z" fill="url(#grassGradient)"/>
+  <path d="M50,85 Q55,65 52,45 Q50,40 48,45 Q45,65 50,85 Z" fill="url(#grassGradient)"/>
+  <path d="M55,85 Q60,75 57,60 Q55,55 53,60 Q50,75 55,85 Z" fill="url(#grassGradient)"/>
+
+  <!-- Center grass blades (taller) -->
+  <path d="M37,85 Q35,60 38,35 Q40,30 42,35 Q45,60 40,85 Z" fill="url(#grassGradient)"/>
+  <path d="M42,85 Q40,55 43,30 Q45,25 47,30 Q50,55 45,85 Z" fill="url(#grassGradient)"/>
+  <path d="M47,85 Q45,70 48,45 Q50,40 52,45 Q55,70 50,85 Z" fill="url(#grassGradient)"/>
+
+  <!-- Small flowers/details -->
+  <circle cx="35" cy="50" r="1.5" fill="#FFD700"/>
+  <circle cx="50" cy="45" r="1" fill="#FF69B4"/>
+  <circle cx="42" cy="38" r="1.2" fill="#FF6347"/>
+</svg>
+
+
+
+
+
