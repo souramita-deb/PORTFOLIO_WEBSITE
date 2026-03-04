@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Parallax Background Layers -->
+    <div class="parallax-container">
+        <!-- Layer 1: Sky -->
+        <div class="parallax-layer layer-sky" data-depth="0.1"></div>
+
+        <!-- Layer 2: Clouds -->
+        <div class="parallax-layer layer-clouds" data-depth="0.3">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+
+        <!-- Layer 3: Forest Silhouette -->
+        <div class="parallax-layer layer-forest" data-depth="0.5"></div>
+
+        <!-- Layer 4: Foreground Plants -->
+        <div class="parallax-layer layer-foreground" data-depth="0.8">
+            <div class="plant plant-1"></div>
+            <div class="plant plant-2"></div>
+            <div class="plant plant-3"></div>
+        </div>
+
+        <!-- Stars (Night Mode Only) -->
+        <div class="stars" id="stars"></div>
+
+        <!-- Fireflies (Night Mode Only) -->
+        <div class="fireflies" id="fireflies"></div>
+
+        <!-- Birds (Day Mode Only) -->
+        <div class="birds" id="birds">
+            <div class="bird bird-1"></div>
+            <div class="bird bird-2"></div>
+            <div class="bird bird-3"></div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <div class="toggle-icon">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </div>
+        <!-- Theme Instruction -->
+        <div class="theme-instruction" id="themeInstruction">
+            Click to toggle, Light ↔ Dark mode
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-card">
+                <!-- Left Column: Navigation -->
+                <div class="nav-column">
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="#" data-panel="about" class="nav-link">About Me</a></li>
+                            <li><a href="#" data-panel="works" class="nav-link">My Works</a></li>
+                            <li><a href="#" data-panel="skills" class="nav-link">Skills</a></li>
+                            <li><a href="#" data-panel="certificates" class="nav-link">Certificates</a></li>
+                            <li><a href="#" data-panel="resume" class="nav-link">Resume</a></li>
+                            <li><a href="#" data-panel="contact" class="nav-link">Contact Me</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Right Column: Photo & Intro -->
+                <div class="info-column">
+                    <div class="profile-photo">
+                        <img src="assets/images/profile-placeholder.svg" alt="Profile Photo" id="profilePhoto">
+                        <!-- Cloud Tooltip -->
+                        <div class="profile-tooltip" id="profileTooltip">
+                            <div class="tooltip-text" id="tooltipText">Hi!</div>
+                            <div class="tooltip-tail"></div>
+                        </div>
+                    </div>
+                    <div class="intro-text">
+                        <h1>Souramita Deb</h1>
+                        <p class="subtitle">Full Stack Developer & UI/UX Designer</p>
+                        <p class="description">
+                            Welcome to my digital realm. I craft immersive web experiences
+                            and explore the boundaries of technology, just like an adventurer
+                            charting unknown territories.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Panel Overlay for closing -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <!-- Floating Modal Panel -->
+    <div class="floating-panel" id="floatingPanel">
+        <div class="panel-drag-handle" id="panelDragHandle">
+            <div class="panel-header">
+                <h2 id="panelTitle">Panel Title</h2>
+                <button class="close-panel" id="closeFloatingPanel">&times;</button>
+            </div>
+        </div>
+        <div class="panel-content" id="panelContent"></div>
+    </div>
+        <!-- Panel Content Templates (Hidden) -->
+        <div id="aboutContent" style="display: none;">
+            <div class="content-section">
+                <h3>My Journey</h3>
+                <p>
+                    I'm a passionate developer who loves creating beautiful and functional
+                    web applications. I also enjoy working on UI/UX projects and improving user experiences.
+                </p>
+            </div>
+            <div class="content-section">
+                <h3>Interests</h3>
+                <p>
+                    When I'm not coding, you can find me designing apps, websites, posters, social media posts, or experimenting with new recipes in the kitchen.
+                    I believe in maintaining a healthy work-life balance.
+                </p>
+            </div>
+        </div>
+
+        <div id="worksContent" style="display: none;">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project One</h3>
+                    <p>A E-commerce webiste built with HTML, CSS and JAVA SCRIPT</p>
+                    <div class="project-tech">Html • Css • Java Script</div>
+                </div>
+                <div class="project-card">
+                    <h3>Project Two</h3>
+                    <p>A Music web for Listening Ad free Songs</p>
+                    <div class="project-tech">Html • Css • Java Script</div>
+                </div>
+                <div class="project-card">
+                    <h3>Project Three</h3>
+                    <p>A Netflix Clone</p>
+                    <div class="project-tech">Html • Css • Java Script</div>
+                </div>
+                <div class="project-card">
+                    <h3>Project Four</h3>
+                    <p>A Basic Portfolio-Website</p>
+                    <div class="project-tech">Html • Css • Java Script</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="skillsContent" style="display: none;">
+            <div class="skills-section">
+                <h3>Frontend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">SASS</span>
+                </div>
+            </div>
+            <div class="skills-section">
+                <h3>Backend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Express</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                </div>
+            </div>
+            <div class="skills-section">
+                <h3>Tools & Others</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Photoshop</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="certificatesContent" style="display: none;">
+            <div class="certificate-list">
+                <div class="certificate-item">
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <p class="certificate-issuer">Amazon Web Services</p>
+                    <p class="certificate-date">2024</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>Google Cloud Professional Developer</h3>
+                    <p class="certificate-issuer">Google Cloud</p>
+                    <p class="certificate-date">2023</p>
+                </div>
+                <div class="certificate-item">
+                    <h3>React Developer Certification</h3>
+                    <p class="certificate-issuer">Meta</p>
+                    <p class="certificate-date">2023</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="resumeContent" style="display: none;">
+            <div class="resume-section">
+                <h3>Experience</h3>
+                <div class="job-item">
+                    <h4>Junior Full Stack Developer</h4>
+                    <p class="company">Tech Company Inc.</p>
+                    <p class="period">20XY - Present</p>
+                    <p>Leading development of web applications using modern technologies</p>
+                </div>
+                <div class="job-item">
+                    <h4>Frontend Developer</h4>
+                    <p class="company">StartupXYZ</p>
+                    <p class="period">2020 - 2022</p>
+                    <p>Built responsive user interfaces and improved user experience</p>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="education-item">
+                    <h4>Bachelor of Computer Science</h4>
+                    <p class="institution">TCEA</p>
+                    <p class="period">2024 - 2028</p>
+                </div>
+            </div>
+            <div class="resume-download">
+                <a href="#" class="download-btn">Download Full Resume</a>
+            </div>
+        </div>
+
+        <div id="contactContent" style="display: none;">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>Souramita.doe@example.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>India, Tripura</p>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <p><a href="#">linkedin.com/in/Souramita</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <p><a href="#">github.com/Souramita</a></p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
