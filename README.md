@@ -83,3 +83,9 @@ The skills, experience, and other personal details currently displayed on the we
 - Minify CSS and JavaScript files
 
 - Replace demo content with real project data
+
+----
+
+👨‍💻 Author
+
+Souramita Deb
