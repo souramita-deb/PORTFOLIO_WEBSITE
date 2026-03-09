@@ -1,4 +1,4 @@
-## My Portfolio Website
+## My Portfolio 
 
 This repository contains my personal portfolio website, developed as part of my journey as a frontend developer. The project reflects my current skills, creativity, and understanding of modern web development fundamentals.
 It was built independently from scratch without using any pre-designed templates.
